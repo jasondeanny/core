@@ -217,6 +217,17 @@ class SharpAquosTVDevice(MediaPlayerEntity):
         """Send the previous track command."""
         self._remote.remote_button(19)
 
+    @_retry
+    def media_channel_up(self) -> None:
+        """Send the previous track command."""
+        self._remote.remote_button(34)
+
+    @_retry
+    def media_channel_down(self) -> None:
+        """Send the previous track command."""
+        self._remote.remote_button(35)
+  
+    
     def select_source(self, source: str) -> None:
         """Set the input source."""
         for key, value in SOURCES.items():
